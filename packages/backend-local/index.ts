@@ -38,7 +38,7 @@ app.post("/", async (req, res) => {
   console.log("transactions", transactions);
 });
 
-const PORT = process.env.PORT || 49832;
+const PORT = process.env.PORT || 9832;
 const server = app
   .listen(PORT, () => {
     console.log(
