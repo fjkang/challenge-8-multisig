@@ -30,7 +30,7 @@ const Pool: FC = () => {
   const { data: eventsHistory } = useScaffoldEventHistory({
     contractName: "MetaMultiSigWallet",
     eventName: "ExecuteTransaction",
-    fromBlock: 0n,
+    fromBlock: 8880983n,
     watch: true,
   });
 
@@ -48,10 +48,10 @@ const Pool: FC = () => {
         ).json();
 
         const newTransactions: TransactionData[] = [];
-        // eslint-disable-next-line no-restricted-syntax, guard-for-in
+
         for (const i in res) {
           const validSignatures = [];
-          // eslint-disable-next-line guard-for-in, no-restricted-syntax
+
           for (const s in res[i].signatures) {
             const signer = (await metaMultiSigWallet?.read.recover([
               res[i].hash as `0x${string}`,

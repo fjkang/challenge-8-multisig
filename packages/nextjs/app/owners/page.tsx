@@ -28,7 +28,7 @@ const Owners: FC = () => {
   const { data: ownerEventsHistory } = useScaffoldEventHistory({
     contractName: "MetaMultiSigWallet",
     eventName: "Owner",
-    fromBlock: 0n,
+    fromBlock: 8880983n,
   });
 
   useEffect(() => {
